@@ -1,8 +1,27 @@
+
+.mainContainer {
+  display: flex;
+}
+
+.menuSection {
+  width: 20%;
+}
+
+.charactersSection {
+  width: 20%;
+}
+
+.detailsSection {
+  width: 60%;
+}
+
+
+
 .houses {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 700px;
+  height: 500px;
   overflow: auto;
 }
 
@@ -17,6 +36,76 @@ button.active {
   background-color: lightblue;
 }
 
-.menu {
-  width: 20%;
+.charters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  overflow: auto;
 }
+
+.charters button {
+  width: 130px;
+  margin: 3px 0px;
+  font-size: 16px;
+  padding: 6px;
+}
+
+
+
+
+
+
+.selectedCharters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  overflow: auto;
+}
+
+
+.charactersCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+  width: auto;
+  overflow: auto;
+
+  border: 1px solid rgb(0, 0, 0);
+  border-radius:15px;
+  padding: 2px;
+  margin: 5px;
+}
+
+.title{
+  font-size: 46px;
+  padding: 10px 10px 0 10px;;
+}
+
+.cardBody{
+  padding: 10px;
+}
+
+.cardFooter{
+  background: #33363c;
+  color: #ddd;
+  border-radius:0 15px 0 15px;
+  padding: 10px;
+  text-align:center;
+  font-size: 36px;
+  width: 320px;
+  
+}
+
+.cardImage {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 2px;
+  height: 300px;
+}
+
+
+
+

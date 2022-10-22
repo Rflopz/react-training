@@ -550,6 +550,11 @@ export function getAllHouses () {
 
 export function filterByHouse (house) {
   return charactersList.filter(item => item.family === house)
+  .map(charter => ({ ...charter, active: false }))
+}
+
+export function filterById (id) {
+  return charactersList.filter(item => item.id == id)
 }
 
 export default charactersList;
