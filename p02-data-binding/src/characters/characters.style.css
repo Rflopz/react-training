@@ -1,0 +1,22 @@
+.houses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 700px;
+  overflow: auto;
+}
+
+.houses button {
+  width: 130px;
+  margin: 3px 0px;
+  font-size: 16px;
+  padding: 6px;
+}
+
+button.active {
+  background-color: lightblue;
+}
+
+.menu {
+  width: 20%;
+}
