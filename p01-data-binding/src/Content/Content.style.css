@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.container div.card {
+  border: 1px solid lightgray;
+  background-color: whitesmoke;
+  width: 100%;
+  border-radius: 10px;
+  margin: 0px 10px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
+  padding: 20px;
+}
+.content p {
+  text-align: justify;
+}
+div.editor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+div.form-group label {
+  text-align: start;
+  margin: 10px 0;
+}
+div.form-group input {
+  font-size: 16px; 
+  padding: 8px;
+}
+div.form-group textarea {
+  font-size: 16px; 
+  padding: 8px;
+  max-width: 98%;
+}
