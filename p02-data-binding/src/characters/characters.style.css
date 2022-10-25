@@ -19,4 +19,21 @@ button.active {
 
 .menu {
   width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.characters {
+  width: 80%;
+  display: inline-block;
+}
+
+.character {
+  display: inline-block;
+}
+
+.character img {
+  max-width:200px;
+  max-height:200px;
+  margin: 10px;
 }
