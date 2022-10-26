@@ -1,0 +1,11 @@
+.form {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

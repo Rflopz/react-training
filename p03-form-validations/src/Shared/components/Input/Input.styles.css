@@ -1,0 +1,18 @@
+.form-input {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+input {
+  margin: 10px 0;
+  font-size: 16px;
+  padding: 4px;
+  border: 1px solid white;
+  border-radius: 6px;
+  background-color: lightgray;
+}
+
+input:focus-visible {
+  outline: none;
+}
