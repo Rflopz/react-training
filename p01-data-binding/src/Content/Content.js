@@ -15,7 +15,7 @@ function Content() {
   });
 
   function handleToggleClick() {
-    setState({ ...state, showEditor: !state["showEditor"] });
+    setState({ ...state, showEditor: !state.showEditor });
   }
 
   function handleChange(e) {
@@ -28,7 +28,7 @@ function Content() {
 
   return (
     <div className="container">
-      {state["showEditor"] ? (
+      {state.showEditor && (
         <div className="card editor">
           <div className="form-group">
             <label>Title</label>
@@ -49,13 +49,13 @@ function Content() {
             />
           </div>
         </div>
-      ) : null}
+      )}
 
       <div className="card content">
         <h3>{state["title"]}</h3>
         <p>{state["description"]}</p>
         <button onClick={handleToggleClick} name="showEditor">
-          {state["showEditor"] ? "Hide Editor" : "Show Editor"}
+          {`${state.showEditor ? "Hide" : "Show"} Editor`}
         </button>
       </div>
     </div>
