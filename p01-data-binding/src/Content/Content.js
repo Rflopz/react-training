@@ -47,7 +47,7 @@ function Content() {
 
   return (
     <div className="container">
-      { editing && Editor() }
+      { editing && <Editor /> }
       <div className="card content">
         <button onClick={handleDisplayClick}>{displayText}</button>
         <h3>{title}</h3>
