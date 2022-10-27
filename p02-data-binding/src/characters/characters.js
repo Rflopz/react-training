@@ -7,7 +7,8 @@ const initialHousesState = getAllHouses();
 function Characters() {
 
   const [houses, setHouses] = useState(initialHousesState);
-
+  const [housesInitial, setHousesInitial] = useState(charactersList);
+  const [houseNameChange, sethouseNameChange] = useState('All');
   /**
    * Toggles the active state of the given house name
    * @param {string} houseName 
@@ -20,11 +21,12 @@ function Characters() {
 
   const handleClick = (e) => {
     const houseName = e.target.name
-
+    sethouseNameChange(houseName);
     setHouses(initialHousesState);
 
     if (houseName === "All") {
       // dislay all chanracters
+      setHousesInitial(charactersList);
       return;
     }
 
@@ -32,7 +34,8 @@ function Characters() {
 
     // display all characters of active house
     const characters = filterByHouse(houseName)
-    console.log(characters)
+
+    setHousesInitial(characters);
   }
 
   return (
@@ -53,7 +56,19 @@ function Characters() {
         </div>
       </div>
       <div className="characters">
+        <h1>{houseNameChange}</h1>
+      { housesInitial?.map(({id, fullName, title, imageUrl, image})=>(
 
+          <div key={id}>
+             <h2>{fullName}</h2>
+              <h3>{title}</h3>          
+                <img key={id} src={imageUrl} alt={image} />
+          </div>
+            
+ 
+
+          )
+          ) }
       </div>
     </div>
   )
