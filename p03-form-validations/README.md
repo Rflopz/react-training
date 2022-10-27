@@ -30,7 +30,7 @@
 >
 > * Click to the button clear should clear the form
 > * Set all the fields to empty string state
-> * Cancel button should have darkorange font and border color
+> * Clear button should have darkorange font and border color
 
 
 # Tips 
