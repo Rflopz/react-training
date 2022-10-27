@@ -1,4 +1,4 @@
 import Input from "./Input/Input.component";
 import Button from "./Button/Button.component";
-
-export { Input, Button };
+import  Logotipo  from "./Logotipo/Logotipo.component";
+export { Input, Button, Logotipo };
