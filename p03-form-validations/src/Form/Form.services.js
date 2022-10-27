@@ -26,8 +26,15 @@ export const fieldsList = [
   },
 ]
 
-export const isFieldValid = (value) => {
+// export const isFieldValid = (value) => {
+//   // here should be the field validations 
+  
+// }
+
+export function isFieldValid  (value)  {
   // here should be the field validations 
+  console.log (value.trim().length )
+  return value.trim().length > 0
 }
 
 export const handleSubmitForm = () => {
