@@ -5,19 +5,26 @@ import { fieldsList, isFieldValid } from './Form.services'
 
 import "./Form.styles.css"
 
+const initialState = fieldsList.map(field=> ({...field, ready:false, value:""}))
+
 const Form = () => {
 
-  const [statusSendButton, setStatusSendButton] = useState(false)
-  const [listo, setListo] = useState('No listo')
+  const [fieldsReady, setFieldsReady] = useState(false)
+  const [listo, setListo] = useState('Not ready to send')
+  const [fieldsForm, setFieldsForm] = useState(initialState)
 
-  const [fieldsForm, setFieldsForm] = useState(
-    fieldsList.map(field=> ({...field, ready:false, value:""})
-  )) 
-
-  
+  useEffect(()=> {
+    setFieldsReady(true)
+    setListo('Ready to send')
+    fieldsForm.map((field) =>{
+      if (!field.ready) {
+        setFieldsReady(false)
+        setListo('Not ready to send')
+      }
+    });
+  }, [fieldsForm]);
 
   const handleOnChange = (e) => {
-    
     const { name, value } = e.target
     console.log (`campo ${name} valor ${value}`)
 
@@ -33,32 +40,26 @@ const Form = () => {
     // ))
   }
 
-  useEffect(()=> {
-    setStatusSendButton(true)
-    setListo('Listo')
-    fieldsForm.map((field) =>{
-      if (!field.ready) {
-        setStatusSendButton(false)
-        setListo('No listo')
-      }
-    });
-  }, [fieldsForm]);
+  const handleClickClear = () => {
+    console.log('Clear')
+    setFieldsForm(initialState)
+  }
 
-  
-
-  
-  
-  
+  const handleClickSubmit = () => {
+    window.alert("Send button clicked");
+  }
+   
   return (
     <Card width={"50%"}>
       <div className="form">
-        <Input label="this is label" />
+        
         {console.log (fieldsForm)}
         {fieldsForm.map((field) =>(
           <Input
             key={field.name} 
             name= {field.name}
             label={field.label} 
+            value ={field.value}
             type={field.type}
             onChange = {handleOnChange}
             />
@@ -67,9 +68,8 @@ const Form = () => {
 
       </div>
       <div className="form-actions">
-        <Button title="Clear"/>
-        <Button title={listo} isDisabled={statusSendButton}/>
-        
+        <Button title="Clear" handleClick={handleClickClear} className='button-cancel'/>
+        <Button title={listo} handleClick={handleClickSubmit} isDisabled={!fieldsReady}/>
       </div>
     </Card>
   )

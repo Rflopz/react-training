@@ -25,6 +25,8 @@ const Header = ({ title }) => {
     setInfoHeader(infoHeader.status===true ? animationOff : animationOn)
   }
 
+  
+
   return (
     <header className="App-header">
       <ReactLogo logo={logo} className = {infoHeader.useClass} />
