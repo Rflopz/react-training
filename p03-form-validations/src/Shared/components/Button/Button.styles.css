@@ -1,6 +1,6 @@
 button {
   background-color: transparent;
-  color: lightblue;
+  color: lightblue; 
   padding: 10px;
   border: 1px solid;
   border-color: white;
@@ -13,3 +13,22 @@ button:hover {
   background-color: #3e3e3e;
   cursor: pointer;
 }
+
+button.button-cancel {
+  color: darkorange;
+  border-color: darkorange;
+} 
+
+
+/* button.button-cancel {
+  background-color: transparent;
+  color: rgb(255, 68, 0);
+  padding: 10px;
+  border: 1px solid;
+  border-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: Inter;
+} */
+
+/* color: lightblue; */
