@@ -5,6 +5,11 @@
   height: 700px;
   overflow: auto;
 }
+.characters {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start; 
+}
 
 .houses button {
   width: 130px;

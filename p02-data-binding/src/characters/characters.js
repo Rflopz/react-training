@@ -1,39 +1,45 @@
-import React, { useState } from 'react'
-import charactersList, { filterByHouse, getAllHouses } from './charactersList'
+import React, { useState } from "react";
+import charactersList, { filterByHouse, getAllHouses } from "./charactersList";
 import "./characters.style.css";
 
 const initialHousesState = getAllHouses();
 
 function Characters() {
-
   const [houses, setHouses] = useState(initialHousesState);
+  const [house, setHouse] = useState("All");
+  const [characters, setCharacters] = useState(charactersList);
 
   /**
    * Toggles the active state of the given house name
-   * @param {string} houseName 
+   * @param {string} houseName
    */
   const toggleHouseActive = (houseName) => {
-    setHouses(state => state.map(item => 
-      (item.name !== houseName) ? item : {...item, active: !item.active }
-    ))
-  }
+    setHouses((state) =>
+      state.map((item) =>
+        item.name !== houseName ? item : { ...item, active: !item.active }
+      )
+    );
+    setHouse(houseName);
+  };
 
   const handleClick = (e) => {
-    const houseName = e.target.name
+    const houseName = e.target.name;
 
     setHouses(initialHousesState);
 
     if (houseName === "All") {
       // dislay all chanracters
+      setCharacters(charactersList);
+      setHouse("All");
       return;
     }
 
-    toggleHouseActive(houseName)
+    toggleHouseActive(houseName);
 
+    setCharacters(filterByHouse(houseName));
     // display all characters of active house
-    const characters = filterByHouse(houseName)
-    console.log(characters)
-  }
+    console.log(characters);
+  };
 
   return (
     <div className="container">
@@ -41,22 +47,29 @@ function Characters() {
         <h4>Houses</h4>
         <div className="houses">
           {houses?.map((house) => (
-            <button 
+            <button
               key={house.name}
-              name={house.name} 
+              name={house.name}
               className={house.active ? "active" : ""}
               onClick={handleClick}
             >
               {house.name}
-            </button>)
-          )}
+            </button>
+          ))}
         </div>
       </div>
+      <h4>Characters for {house}</h4>
       <div className="characters">
-
+        {characters?.map(({ id, fullName, title, imageUrl, name }) => (
+          <div key={id}>
+            <h1>{fullName}</h1>
+            <h2>{title}</h2>
+            <img key={id} src={imageUrl} alt={name} />
+          </div>
+        ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Characters
+export default Characters;
