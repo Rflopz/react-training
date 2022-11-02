@@ -21,7 +21,7 @@
 > ## As a user if I click on the next icon, it should bring another random quote and the time should restart 
 > AC 
 > * timer should restart to beginning.
-> * it timer is paused it should start counting down to 0 again 
+> * if timer is paused it should start counting down to 0 again 
 > * the heart icon should be the default outlined icon
 
 
@@ -29,7 +29,7 @@
 > AC 
 > * the oulined icon should be replaced with the filled icon
 > * the color of the filled icon should me red 
-> * the filled icon should shout until a new quote shows 
+> * the filled icon should show until a new quote shows 
 
 > ## As a user I need to see the list of favorite quotes. Each item on the list should have the quote and author and a button to delete it from the list.
 > AC
