@@ -22,14 +22,16 @@ export const fieldsList = [
   {
     name: "password",
     label: "User password",
-    type: "password"
+    type: "password",
   },
-]
+];
 
 export const isFieldValid = (value) => {
-  // here should be the field validations 
-}
+  // here should be the field validations
+  return value !== null && value.match(/^ *$/) === null;
+};
 
 export const handleSubmitForm = () => {
   // don't focus on submit functionality yet.
-}
+  alert("Submitted");
+};
