@@ -13,3 +13,8 @@ button:hover {
   background-color: #3e3e3e;
   cursor: pointer;
 }
+
+button.clear {
+  color: darkorange;
+  border-color: darkorange;
+} 
