@@ -2,14 +2,14 @@ import { Typography } from "@mui/material";
 import React from "react";
 import { QuotePaper } from "./Quotes.styles";
 
-const CurrentQuote = () => {
+const CurrentQuote = ({quote}) => {
   return <QuotePaper>
     <Typography variant="h3">
-      "Science gives us knowledge, but only philosophy can give us wisdom."
+      {quote.content}
     </Typography>
 
     <Typography variant="h5" align="right">
-      - will-durant
+     { `${quote.author} - ${ new Date(quote.dateAdded).getFullYear()}`}
     </Typography>
 
   </QuotePaper>;
