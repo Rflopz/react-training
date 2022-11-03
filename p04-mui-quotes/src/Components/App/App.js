@@ -3,7 +3,6 @@ import Providers from "../Providers"
 import { Quotes } from '../Quote';
 import Footer from './Footer';
 import Header from './Header';
-
 function App() {
   return (
     <Providers>
