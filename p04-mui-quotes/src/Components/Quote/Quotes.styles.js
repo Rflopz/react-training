@@ -1,5 +1,5 @@
 import { Paper } from "@mui/material";
-import { styled } from "@mui/system";
+import { padding, styled } from "@mui/system";
 
 export const QuoteContainer = styled("div")(({ theme }) => ({
   textAlign: "center",
@@ -10,7 +10,8 @@ export const QuoteContainer = styled("div")(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   alignContent: "center",
-  margin: "auto"
+  margin: "auto",
+  
 }));
 
 export const QuoteListContainer = styled("div")(({ theme }) => ({
