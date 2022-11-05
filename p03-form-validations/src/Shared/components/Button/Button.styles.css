@@ -9,7 +9,12 @@ button {
   font-family: Inter;
 }
 
-button:hover {
+button:enabled:hover {
   background-color: #3e3e3e;
   cursor: pointer;
+}
+
+.clear-button {
+  color: darkorange;
+  border-color: darkorange;
 }
