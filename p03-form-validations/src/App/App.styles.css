@@ -16,17 +16,6 @@ code {
   height: 100vh;
 }
 
-.App-logo {
-  height: 4rem;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .logo-animation {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   min-height: 10vh;
   display: flex;
