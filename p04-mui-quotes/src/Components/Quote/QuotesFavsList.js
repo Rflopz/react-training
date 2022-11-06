@@ -1,8 +1,29 @@
+import { Favorite } from '@mui/icons-material'
+import { IconButton, List, ListItem, ListItemText } from '@mui/material'
 import React from 'react'
 
-const QuotesFavsList = () => {
+const QuotesFavsList = ({favoriteList, onClick}) => {
   return (
-    <div>Quotes Favorite List</div>
+    <List>
+      {
+        favoriteList.map((favorite, index) => (
+          <ListItem key={index}
+            secondaryAction={
+              <IconButton color="secondary" edge="end" onClick={onClick} value={index}>
+                <Favorite value={index} />
+              </IconButton>
+            }
+          >
+            <ListItemText
+              primary={favorite.content}
+              secondary={favorite.author}
+            >
+            </ListItemText>
+          </ListItem>
+          )
+        )
+      }
+    </List>
   )
 }
 
