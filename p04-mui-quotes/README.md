@@ -22,11 +22,11 @@
 > AC 
 > * timer should restart to beginning.
 > * if timer is paused it should start counting down to 0 again 
-> * the heart icon should be the default outlined icon
 
 
 > ## As a user if I click the heart button, this should add the quote to my favorite list
 > AC 
+> * the heart icon should be the default outlined icon
 > * the oulined icon should be replaced with the filled icon
 > * the color of the filled icon should me red 
 > * the filled icon should show until a new quote shows 

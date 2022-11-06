@@ -1,15 +1,19 @@
-import { Typography } from "@mui/material";
+import { Typography, Chip } from "@mui/material";
 import React from "react";
 import { QuotePaper } from "./Quotes.styles";
 
-const CurrentQuote = () => {
+const CurrentQuote = ({content, author, year, tags}) => {
   return <QuotePaper>
     <Typography variant="h3">
-      "Science gives us knowledge, but only philosophy can give us wisdom."
+      {content}
     </Typography>
-
+    {
+      tags.map((tag) => (
+        <Chip key={tag} label={tag} />)
+      )
+    }
     <Typography variant="h5" align="right">
-      - will-durant
+      - {author} - {year}
     </Typography>
 
   </QuotePaper>;
