@@ -11,6 +11,18 @@ function useFetch(props: UseFetchProps) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    function resetState() {
+        setData(null)
+        setLoading(true)
+        setError(null)
+    }
+
+    function handleData(data: any) {
+        resetState()
+        setData(data)
+        globalCache.set(props.url, data)
+    }
+
     async function fetchData(controller: AbortController, isCurrent: () => boolean) {
         setLoading(true)
 
@@ -18,20 +30,16 @@ function useFetch(props: UseFetchProps) {
             const response = await fetch(props.url, { signal: controller.signal })
 
             if (!response.ok) {
-                console.log(response)
                 throw new Error(`${response.status} - ${response.statusText} there was an error fetching the data`)
             }
 
             const data = await response.json()
 
             if (isCurrent()) {
-                setData(data)
-                globalCache.set(props.url, data)
-                setError(null)
+                handleData(data)
             }
         } catch (error: unknown | any) {
             if (isCurrent()) {
-                console.log(error)
                 setError(error?.message || "Something went wrong")
             }
         } finally {
@@ -45,9 +53,7 @@ function useFetch(props: UseFetchProps) {
         let isCurrent = true;
 
         if (globalCache.has(props.url)) {
-            setData(globalCache.get(props.url))
-            setLoading(false)
-            setError(null)
+            handleData(globalCache.get(props.url))
             return
         }
 
