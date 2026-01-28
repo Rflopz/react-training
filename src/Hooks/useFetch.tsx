@@ -6,8 +6,8 @@ interface UseFetchProps {
 
 const globalCache = new Map();
 
-function useFetch(props: UseFetchProps) {
-    const [data, setData] = useState(null);
+function useFetch<T>(props: UseFetchProps) {
+    const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -17,7 +17,7 @@ function useFetch(props: UseFetchProps) {
         setError(null)
     }
 
-    function handleData(data: any) {
+    function handleData(data: T) {
         resetState()
         setData(data)
         globalCache.set(props.url, data)
